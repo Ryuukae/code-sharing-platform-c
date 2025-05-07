@@ -1,0 +1,26 @@
+@model CodeSharingPlatform.Models.CodeSnippet
+
+<head>
+    <link rel="stylesheet" href="/ViewSnippetStyles.css" />
+</head>
+
+<div class="container">
+    <h1>View Code Snippet</h1>
+    <pre class="code-block">@Model.Content</pre>
+    <p class="metadata"><strong>Name:</strong> @Model.Name</p>
+    <p class="metadata"><strong>Created on:</strong> @Model.CreationTimestamp</p>
+
+    @if (Model is CodeSharingPlatform.Models.ExpiringSnippet expiring)
+    {
+        <p class="metadata"><strong>Views left:</strong> @expiring.ViewCounter</p>
+        <p class="metadata"><strong>Expires at:</strong> @expiring.ExpirationTime</p>
+    }
+
+    <div class="button-group">
+        <a href="/code/latest" class="back-button">Back to Latest Snippets</a>
+
+        <form method="post" action="/code/delete/@Model.ID" style="display:inline;">
+            <button type="submit" class="delete-button" onclick="return confirm('Are you sure you want to delete this snippet?');">Delete</button>
+        </form>
+    </div>
+</div>

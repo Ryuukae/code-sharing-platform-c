@@ -1,0 +1,17 @@
+@model IEnumerable<CodeSharingPlatform.Models.CodeSnippet>
+
+<head>
+    <link rel="stylesheet" href="/CodeSnippetStyles.css" />
+</head>
+
+<h1>Latest Code Snippets</h1>
+    <ul class="snippet-list">
+        @foreach (var snippet in Model)
+        {
+            <li>
+                <a class="snippet-link" href="@Url.Action("ViewSnippet", "WebCode", new { id = snippet.ID })">
+                    <pre class="code-block">@(!string.IsNullOrEmpty(snippet.Name) ? snippet.Name : snippet.ID)</pre>
+                </a>
+            </li>
+        }
+    </ul>

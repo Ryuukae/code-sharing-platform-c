@@ -1,0 +1,8 @@
+{
+    "Type": "Expiring",
+    "ID": "test-expiring",
+    "Content": "Console.WriteLine(\"Hello, Expiring!\");",
+    "CreationTimestamp": "2025-04-29T12:00:00Z",
+    "ExpirationTime": "2025-04-30T12:00:00Z",
+    "ViewCounter": 5
+}

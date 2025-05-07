@@ -1,0 +1,27 @@
+@model dynamic
+
+<link rel="stylesheet" href="/CodeSnippetStyles.css" />
+
+<h1 style="text-align:center; color:#222; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 25px;">Submit a New Code Snippet</h1>
+<form asp-action="CreateSnippet" method="post" class="form-container" style="max-width:600px; margin:20px auto; padding:20px; background-color:#f9f9f9; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-family: Arial, sans-serif;">
+    <div class="form-group" style="margin-bottom:15px; display:flex; flex-direction:column;">
+        <label for="Name" class="form-label" style="font-weight:bold; margin-bottom:6px; color:#333;">Snippet Name:</label>
+        <input type="text" id="Name" name="name" required class="form-input" placeholder="Enter snippet name" style="padding:8px 10px; border:1px solid #ccc; border-radius:4px; font-size:1rem; font-family:inherit;" />
+    </div>
+    <div class="form-group" style="margin-bottom:15px; display:flex; flex-direction:column;">
+        <label for="Content" class="form-label" style="font-weight:bold; margin-bottom:6px; color:#333;">Snippet Content:</label>
+        <textarea id="Content" name="content" required class="form-input" placeholder="Enter your code snippet here" style="padding:8px 10px; border:1px solid #ccc; border-radius:4px; font-size:1rem; font-family:inherit; min-height:120px; resize:vertical;"></textarea>
+    </div>
+    <div class="form-group" style="margin-bottom:15px; display:flex; flex-direction:column;">
+        <label for="viewLimit" class="form-label" style="font-weight:bold; margin-bottom:6px; color:#333;">View Limit:</label>
+        <input type="number" id="viewLimit" name="viewLimit" class="form-input" min="1" placeholder="Optional" style="padding:8px 10px; border:1px solid #ccc; border-radius:4px; font-size:1rem; font-family:inherit;" />
+    </div>
+    <div class="form-group" style="margin-bottom:15px; display:flex; flex-direction:column;">
+        <label for="expireMinutes" class="form-label" style="font-weight:bold; margin-bottom:6px; color:#333;">Expire After (minutes):</label>
+        <input type="number" id="expireMinutes" name="expireMinutes" class="form-input" min="1" placeholder="Optional" style="padding:8px 10px; border:1px solid #ccc; border-radius:4px; font-size:1rem; font-family:inherit;" />
+    </div>
+    <div class="form-group buttons" style="display:flex; align-items:center; justify-content:flex-start; gap:10px;">
+        <button type="submit" class="submit-button" style="background-color:#007bff; color:white; border:none; padding:10px 18px; border-radius:4px; cursor:pointer; font-size:1rem; transition: background-color 0.3s ease;">Submit</button>
+        <a href="@Url.Action("Latest", "WebCode")" class="cancel-button" style="color:#555; text-decoration:none; font-size:1rem; padding:10px 18px; border-radius:4px; border:1px solid transparent; transition: border-color 0.3s ease, color 0.3s ease;">Cancel</a>
+    </div>
+</form>
