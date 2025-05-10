@@ -19,12 +19,12 @@ namespace CodeSharingPlatform.Models
         /// <summary>
         /// Gets or sets the content of the snippet.
         /// </summary>
-        public string Content { get; set; }
+        public string Content { get; set; } = "N/A";
 
         /// <summary>
         /// Gets or sets the name of the snippet.
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } = "N/A";
 
         /// <summary>
         /// Gets or sets the creation timestamp of the snippet.
