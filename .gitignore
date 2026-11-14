@@ -1,0 +1,33 @@
+# Ignore all
+*
+
+# Except
+!.gitignore
+!.github/
+!.github/workflows/
+!Controllers/
+!Controllers/WebCodeController.cs
+!Controllers/ApiCodeController.cs
+!Models/
+!Models/CodeSnippet.cs
+!Services/
+!Services/CodeSnippetService.cs
+!snippets/
+!snippets/*
+!Views/
+!Views/CodeSnippetStyles.css
+!Views/NewSnippetForm.cshtml
+!Views/LatestSnippets.cshtml
+!Views/ViewSnippet.cshtml
+!Views/ViewSnippetStyles.css
+!Program.cs
+!Startup.cs
+!FINAL REFLECTION.docx
+!README.md
+# AgentDiff
+!.github/workflows/*
+!.agentdiff/sessions/
+!.agentdiff/daemon.sock
+!.agentdiff/daemon.pid
+!.agentdiff/daemon.log
+!.agentdiff/errors.log
